@@ -1,0 +1,17 @@
+html{
+    font-size: 62.25%;
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /* A Y U D A S */
+
+  .centrado{
+    display: flex; /* Alineamiento horizontal izquierda a derecha*/
+        flex-direction: column; /*  el contenido cambia de arriba hacia abajo, ya no es necesario usar justify content*/
+        align-items: center; /* Centra el contenido verticalmente*/
+        justify-content: center; /* alinea horizontalmente con display flex*/
+    }
