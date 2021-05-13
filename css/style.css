@@ -8,6 +8,7 @@
     --negro: #1a1c20 ;
     --principal: #cf7500;
     --secundario: #f0a500;
+    --gris: #DFDFDF;
 }
 
 html{
@@ -34,6 +35,20 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    color: var(--secundario);
+}
+
+h1{
+    color: var(--principal);
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
+h2{
+    color: var(--secundario);
+    text-align: center;
+}
 
   /* A Y U D A S */
 
@@ -62,10 +77,55 @@ a{
         text-align: center;
     }
 
+
+    .blanco{
+        color: var(--blanco);
+    }
+
+    /* B o t o n e s */
+
+
+    .boton{
+        display: block; /* para tomar todo el espacio disponible */
+        font-family: var(--fuenteparrafo);
+        color: var(--blanco);
+        text-align: center; 
+        padding: 1rem 3rem;
+        font-size: 1.8rem;
+        text-transform: uppercase; /* Vuelve a mayusculas el texto */
+        font-weight: 700; /* Bold */
+        margin-bottom: 2rem;
+        border: none;
+        width: 100%;
+    }
+    
+    @media (min-width: 768px ){
+        .boton{
+            display: inline-block; /* se usa inline-block para permita el uso de margin y padding, ya que inline normal lo bloquea, no puede contener contenido a su nivel */
+            margin-bottom: 3rem;
+            width: auto;
+            
+        }
+    }
+    
+    .boton:hover{
+        cursor: pointer;
+    }
+    
+    
+    .boton--primario{
+        background-color: var(--secundario);
+    }
+    
+    .boton--secundario{
+        background-color: var(--primario);
+    }
+    
+
     /* H E A D E R */
 
     .header{
-        background-image: url(../img/banner.jpg);
+        background-image: url(../img/baner.jpg);
         height: 60rem;
         background-size: cover;
         background-repeat: no-repeat;
@@ -73,15 +133,16 @@ a{
     }
 
     .header__color{
-        background-color: var(--negro);
+        background-color: rgba(0, 0, 0, 0.5);
         width: 100%;
         height: 100%;
     }
 
     .header__texto{
         text-align: center;
-        color: var(--blanco);
+        color: var(--principal);
         padding: 5rem;
+        font-size: 2.5rem;
     }
 
     @media (min-width: 768px ){
@@ -102,10 +163,12 @@ a{
 
     .logo__nombre{
         font-weight: normal;
+        color: var(--secundario);
     }
 
     .logo__bold{
         font-weight: 700;
+        color: var(--blanco);
 
     }
 
@@ -122,4 +185,128 @@ a{
             gap: 3rem;
         }
     
+    }
+
+    /* F O O T E R  */
+    .footer{
+        background-color: var(--negro);
+        padding: 3rem 0;
+    }
+
+    /* I N D E X  p R I N C I P A L */
+
+    .mision , .vision, .benef-info{
+        background-image: url(../img/otra.jpg);
+        background-attachment: fixed;
+        border-radius: 2rem;
+        color: var(--blanco);
+        padding: 2rem;
+        margin: .5rem 1rem;
+    }
+
+    .nosotros-secundario__titulo{
+        color: var(--blanco);
+    }
+
+    @media (min-width: 768px ){
+        .nosotros-secundario{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+    
+        }
+
+        .mision, .vision{
+            flex-basis: calc(50% - 1rem );
+
+        }
+        
+    }
+/* I N D E X  C O N T A C T O */
+    .contacto{
+        background-image: url(../img/1.jpg);
+        height: 60rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .contacto__titulo{
+        padding-top: 2rem;
+    }
+
+    .formulario{
+
+        backdrop-filter: blur(.3rem);
+        padding: 1rem;
+    
+    
+    }
+    
+
+
+    @media (min-width: 768px ){
+        .campo{
+    
+            display: flex;
+            margin-bottom: 2rem;
+            
+            }
+    }
+    
+    .campo__label{
+        flex: 0 0 9rem;
+        padding-right: 1rem;
+        color: var(--blanco);
+        
+    }
+    
+    .campo__field{
+        flex: 1; /* toma todo el espacio que quede ya que el factor de crecimiento del hijo campo_label es 0 */
+        border:.1rem solid var(--claro);
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        padding: 2rem;
+        color: var(--blanco);
+    }
+    
+    .campo__field-textarea{
+        width: 100%;
+        height: 20rem;
+        color: var(blanco);
+    }
+    
+    
+    /* I N D E X  P R I N C I P A L E S  */
+    .principales__titulo{
+        padding-top: 2rem ;
+    }
+
+    .principales-benef{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .principales-benef__imagen{
+        width: 15rem;
+        filter: grayscale(1);
+    }
+
+    .principales-benef__imagen:hover{
+        filter: none;
+        transition: 1s;
+    }
+
+    /* P A G I N A  D E  B E N E F A C T O R E S */
+
+    .benef{
+        background-color: var(--gris);
+    }
+
+    .benef{
+        padding-bottom: 2rem;
+        
     }
