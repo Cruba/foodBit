@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/normalize.css">
-    
+    <link href="css/stacktable.css" rel="stylesheet">
+
+
 </head>
 <body class="fondogris">
     <header class="header2">
@@ -33,42 +35,51 @@
     <main>
         <div class="spacer-30"></div>
         <main class=" ">
-            <div class="contenedor2">
-            <form class="formulario fondoblanco" action="">
+            <div class="contenedor">
+            <div class="formulario fondoblanco" action="">
                 <div class="barrita"></div>
-                <h2>Configurar</h2>
-                <div class="margin-2">
-                    <label class="campo__label2" for="nombre">Nombre</label>
-                    <input class="campo__field2" type="text" id="nombre">
+                    <h2>Solicitudes</h2>
+                    <table id="websendeos">
+
+                        <tr>
+                             <th>Nombre</th>
+                             <th>Correo</th>
+                             <th>Telefono</th>
+                             <th>Beneficiencia y/o Empresa</th>
+                             <th>Mensaje</th>
+                        </tr>
+                        <tr>
+                             <td>Web Endeos Cortesía</td>
+                             <td>No incluido</td>
+                             <td>No</td>
+                             <td>€</td>
+                             <td><a href="#" target="_blank">Ver demo</a></td>
+                        </tr>
+                        <tr>
+                             <td>Web Endeos One Page</td>
+                             <td>Sí incluido</td>
+                             <td>No</td>
+                             <td>€€</td>
+                             <td><a href="#" target="_blank">Ver demo</a></td>
+                        </tr>
+                        <tr>
+                             <td>Web Endeos Estándar</td>
+                             <td>Sí incluido</td>
+                             <td>Sí</td>
+                             <td>€€€</td>
+                             <td><a href="#" target="_blank">Ver demo</a></td>
+                        </tr>
+                        <tr>
+                             <td>Web Endeos Profesional</td>
+                             <td>Sí incluido</td>
+                             <td>Sí</td>
+                             <td>€€€€</td>
+                             <td><a href="#" target="_blank">Ver demo</a></td>
+                        </tr>
+                    </table>
+
                 </div>
-                <div class="margin-2">
-                    <label class="campo__label2" for="empresa">Empresa</label>
-                    <input class="campo__field2" type="text" id="empresa">
-                </div>
-                <div class="margin-2">
-                    <label class="campo__field2 fondoprimario" for="img">Cambiar logo de la empresa</label>
-                    <input type="file" id="img" name="img" accept="image/*" class=" desaparecer">
-                </div>
-                <div class="margin-2">
-                    <label class="campo__label2" for="tel">Telefono</label>
-                    <input class="campo__field2" type="tel" id="tel">
-                </div>
-                <div class="margin-2">
-                    <label class="campo__label2" for="email">Correo</label>
-                    <input class="campo__field2" type="email" id="email">
-                </div>
-                <div class="margin-2">
-                    <label class="campo__label2" for="razon">Direcciòn</label>
-                    <input class="campo__field2" type="text" id="razon">
-                </div>
-                <div class="margin-2">
-                    <label class="campo__label2" for="password">Contraseña</label>
-                    <input name="" type="password"  class="campo__field2" id="password" >
-                </div>
-                <div class="">
-                    <input type="submit" value="Actualizar" class="boton2 boton--primario">
-                </div>
-            </form>
+            
         </div>
         </main>
             <div class="spacer-30"></div>
@@ -83,4 +94,9 @@
 
     </footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/stacktable.js"></script>
+<script>
+    $('#websendeos').stacktable();
+</script>
 </html>

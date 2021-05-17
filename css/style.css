@@ -56,6 +56,22 @@ h4{
     
 }
 
+th{
+    background-color: var(--secundario);
+    padding: 2rem;
+    color: var(--blanco);
+    border-radius: .5rem;
+
+}
+
+td{
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1rem;
+    background-color: var(--gris);
+}
+
   /* A Y U D A S */
 
   .centrado{
