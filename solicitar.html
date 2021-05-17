@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body >
     <header class="header">
         <div class="header__color">
             <div class="contenedor">
@@ -33,43 +33,46 @@
                 </div>
             </div>
             <div class="header__texto">
-                <h2 class="no-margin">Benefactor</h2>
+                <h2 class="no-margin">Solicitar</h2>
                 <p class="no-margin blanco"> Applebee`s.</p>
             </div>
         </div>
     </header>
 
+
+
     <main>
         <div class="contenedor">
-            <h1 class="centrar-texto">applebee´s</h1>
-
-            <div class="informacion">
-                <div class="info-benefactor">
-                    <img src="img/benefactor1.png" alt="" class="info-imagen">
+            <h1 class="centrar-texto">Solicitud</h1>
+            <form action="" class="form-solicitud">
+                <div class="campo">
+                    <label class="campo__label2" for="nombre">Nombre</label>
+                    <input class="campo__field2" type="text" id="nombre">
                 </div>
-                <div class="info-benefactor">
-                    <h4 class="no-margin">Empresa:</h4>
-                    <p class="no-margintop">Applebee´s</p>
-                    <h4 class="no-margin">Contacto:</h4>
-                    <p class="no-margintop"><span>Telefono:</span></p>
-                    <p class="no-margintop"><span>Correo:</span></p>
-                    <h4 class="no-margin">Ubicación:</h4>
-                    <p class="no-margintop">Carr. Libre Monterrey - Reynosa km 103-5 126, Fuentes del Valle, 88746 Reynosa, Tamps.</p>
-                    
-                    <form action="solicitar.html">
-                    <input type="submit" placeholder="Contactar" class="boton2 boton--primario">
-                </form>
+                <div class="campo">
+                    <label class="campo__label2" for="email">Correo</label>
+                    <input class="campo__field2" type="email" id="email">
                 </div>
-            </div>
-
-            <div class="descripcion">
-                <h4>Descripción</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae, animi cumque aut quod, repellendus vel incidunt saepe ducimus necessitatibus et itaque quo ratione illo, perferendis quaerat dignissimos? Autem corporis, iusto a labore vero unde blanditiis voluptates odit harum distinctio. Dicta labore quibusdam beatae alias quae atque, laudantium blanditiis error.</p>
-            </div>
+                <div class="campo">
+                    <label class="campo__label2" for="tel">Telefono</label>
+                    <input class="campo__field2" type="tel" id="tel">
+                </div>
+                <div class="campo">
+                    <label class="campo__label2" for="razon">Beneficiencia y/o Empresa</label>
+                    <input class="campo__field2" type="text" id="nombre">
+                </div>
+                <div class="campo">
+                    <label class="campo__label2" for="mensaje">Mensaje</label>
+                    <textarea name=""   class="campo__field2 campo__field-textarea2" id="mensaje" cols="30" rows="10"></textarea>
+                </div>
+                <div class="campo">
+                    <input type="submit" placeholder="Contactar" class="boton boton--primario">
+                </div>
+            </form>
         </div>
     </main>
 
-    <div class="spacer-20"></div>
+
 
     <footer class="footer">
         <div class="contenedor">
