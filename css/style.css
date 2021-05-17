@@ -234,6 +234,10 @@ h4{
         color: var(--blanco);
         padding: 2rem;
         margin: .5rem 1rem;
+      
+        /*   box-shadow: inset 0px 0px 11px -3px rgba(0,0,0,0.56);
+        box-shadow: inset 0px 0px 20px 3px rgba(0,0,0,0.56); */
+
     }
 
     .nosotros-secundario__titulo{
