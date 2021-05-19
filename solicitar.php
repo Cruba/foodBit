@@ -44,29 +44,42 @@
     <main>
         <div class="contenedor">
             <h1 class="centrar-texto">Solicitud</h1>
-            <form action="" class="form-solicitud">
+            <?php
+    if(isset($_GET['true'])) {
+      echo "<center class='mensaje exitoso'>Solicitud enviada con exito, espera a que se contacten contigo</center>";
+    }
+    else{
+        echo "<center class='mensaje fallido'>Algo fallo, favor de realizar de nuevo la solicitud</center>";
+
+    }
+    ?>
+            <form action="archivo_solicitar.php" method="POST" class="form-solicitud">
                 <div class="campo">
                     <label class="campo__label2" for="nombre">Nombre</label>
-                    <input class="campo__field2" type="text" id="nombre">
+                    <input class="campo__field2" type="text" id="nombre" name="nombre">
                 </div>
                 <div class="campo">
                     <label class="campo__label2" for="email">Correo</label>
-                    <input class="campo__field2" type="email" id="email">
+                    <input class="campo__field2" type="email" id="email" name="correo">
                 </div>
                 <div class="campo">
                     <label class="campo__label2" for="tel">Telefono</label>
-                    <input class="campo__field2" type="tel" id="tel">
+                    <input class="campo__field2" type="tel" id="tel" name="Telefono">
                 </div>
                 <div class="campo">
                     <label class="campo__label2" for="razon">Beneficiencia y/o Empresa</label>
-                    <input class="campo__field2" type="text" id="nombre">
+                    <input class="campo__field2" type="text" id="nombre" name="empresa"> 
                 </div>
                 <div class="campo">
                     <label class="campo__label2" for="mensaje">Mensaje</label>
-                    <textarea name=""   class="campo__field2 campo__field-textarea2" id="mensaje" cols="30" rows="10"></textarea>
+                    <textarea name="mensaje"   class="campo__field2 campo__field-textarea2" id="mensaje" cols="30" rows="10"></textarea>
                 </div>
                 <div class="campo">
                     <input type="submit" value="Enviar Solicitud" class="boton boton--primario">
+                    <br>
+                    <?php
+
+    ?>
                 </div>
             </form>
         </div>

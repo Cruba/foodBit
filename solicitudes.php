@@ -1,3 +1,10 @@
+<?php
+session_start();
+//si hay una sesión
+if (isset($_SESSION['identificador'])){
+    //se muestra el contenido de la página web
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +29,10 @@
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
-                        <a href="solicitudes.html" class="navegacion__enlace">Solicitudes</a>
-                        <a href="configurar.html" class="navegacion__enlace">Configurar</a>
-                        <a href="index.html" class="navegacion__enlace">Salir</a>
+                    <a href="userindex.php" class="navegacion__enlace">Inicio usuario</a>
+                        <a href="solicitudes.php" class="navegacion__enlace">Solicitudes</a>
+                        <a href="configurar.php" class="navegacion__enlace">Configurar</a>
+                        <a href="cerrar_sesion.php" class="navegacion__enlace">Salir</a>
 
                     </nav>
     
@@ -100,3 +108,10 @@
     $('#websendeos').stacktable();
 </script>
 </html>
+<?php
+}//si no hay sesión
+else{
+    //se redirecciona
+    header ('location: ./');
+}
+?>

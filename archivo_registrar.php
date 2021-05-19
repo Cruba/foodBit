@@ -16,7 +16,7 @@ if (isset($_POST['nombre']) and isset($_POST['empresa']) and isset($_POST['corre
     $ingresar=mysqli_query($conexion,'INSERT INTO usuarios(nombre,empresa,imagen,telefono,correo,direccion, pass) VALUES
     ("'.$nombre.'","'.$empresa.'","'.$destino.'","'.$tel.'","'.$correo.'","'.$direccion.'","'.$pass.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
     //redirección
-   header ('location: iniciarsesion.php');
+   header ('location: iniciarsesion.?true=login');
 }//si no se enviaron datos
 else{
     header ('location: ./');

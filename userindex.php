@@ -27,8 +27,9 @@ if (isset($_SESSION['identificador'])){
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
-                        <a href="Solicitudes.html" class="navegacion__enlace">Solicitudes</a>
-                        <a href="configurar.html" class="navegacion__enlace">Configurar</a>
+                    <a href="userindex.php" class="navegacion__enlace">Inicio usuario</a>
+                        <a href="solicitudes.php" class="navegacion__enlace">Solicitudes</a>
+                        <a href="configurar.php" class="navegacion__enlace">Configurar</a>
                         <a href="cerrar_sesion.php" class="navegacion__enlace">Salir</a>
 
                     </nav>

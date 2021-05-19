@@ -9,6 +9,7 @@
     --principal: #cf7500;
     --secundario: #f0a500;
     --gris: #EFEEEE;
+    --rojo: crimson;
     
 }
 
@@ -546,4 +547,23 @@ td{
         height: .5rem;
         min-width: 100%;
         background-color: var(--secundario);
+    }
+
+    /* M E N S A J E S */
+    
+    .mensaje { 
+        color: var(--blanco);
+        padding: 2rem;
+        border-radius: .5rem;
+        box-shadow: 0px 0px 13px -3px rgba(0,0,0,0.30);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .exitoso{
+        background-color: var(--secundario);
+    }
+
+    .fallido{
+        background-color: var(--rojo);
     }

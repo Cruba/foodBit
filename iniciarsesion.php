@@ -84,6 +84,14 @@
         <div class="contenedor2">
         <form class="formulario fondoblanco" action="" method="post">
             <div class="barrita"></div>
+
+            <?php
+    if(isset($_GET['true'])) {
+
+      echo " <br><center class='mensaje exitoso'>Registro exitoso inicia sesión</center>";
+    } 
+
+    ?>
             <h2>Iniciar Sesión</h2>
             <div class="margin-2">
                 <label class="campo__label2" for="email">Correo</label>
@@ -97,7 +105,7 @@
                 <input type="submit" value="Iniciar Sesión" class="boton2 boton--primario" name="entrar">
                 <?php
     if(isset($_GET['error'])) {
-      echo "<center>Error el usuario o contraseña no coinciden</center>";
+      echo "<center class='mensaje fallido'>Error el usuario o contraseña no coinciden</center>";
     }
     ?>
             </div>
