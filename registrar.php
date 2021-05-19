@@ -31,7 +31,7 @@
     <div class="spacer-30"></div>
     <main class=" ">
         <div class="contenedor2">
-        <form class="formulario fondoblanco" action="">
+        <form class="formulario fondoblanco" action="archivo_registrar.php"  method="POST" >
             <div class="barrita"></div>
             <h2>Registrar</h2>
             <div class="margin-2">
@@ -51,8 +51,8 @@
                 <input class="campo__field2" type="tel" id="tel">
             </div>
             <div class="margin-2">
-                <label class="campo__label2" for="email">Correo</label>
-                <input class="campo__field2" type="email" id="email">
+                <label class="campo__label2" for="correo">Correo</label>
+                <input class="campo__field2" type="email" id="correo">
             </div>
             <div class="margin-2">
                 <label class="campo__label2" for="razon">Direcciòn</label>
@@ -63,7 +63,7 @@
                 <input name="" type="password"  class="campo__field2" id="password" >
             </div>
             <div class="">
-                <input type="submit" value="Registrar" class="boton2 boton--primario">
+                <button type="submit" class="boton2 boton--primario">Registrar</button>
             </div>
         </form>
     </div>
