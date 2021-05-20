@@ -71,7 +71,7 @@
 
             <div class="benefactores">
                 <a href="beneficiencia.php?usr= <?php echo $filas['identificador'] ?> ">
-                    <img class="benfactores__imagen" src="img/benefactor1.png" alt="imagen de applebees">
+                    <img class="benfactores__imagen" src="<?php echo $filas['imagen'];?>" alt="imagen de applebees">
                     <div class="benefactores__info">
                         <p class="benefactores__nombre "> <?php echo $filas[2]?> </p>
                     </div>

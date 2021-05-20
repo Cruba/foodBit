@@ -1,5 +1,5 @@
 <?php
-$conexion=new mysqli('localhost','root','','foodbit2');
+$conexion=new mysqli('localhost','root','','foodbit');
 
 
 if($conexion->connect_errno) {

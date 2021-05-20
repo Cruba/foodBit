@@ -66,7 +66,7 @@ function ConsultarUsuario($id){
 
             <div class="informacion">
                 <div class="info-benefactor">
-                    <img src="img/benefactor1.png" alt="" class="info-imagen">
+                    <img src="<?php echo $filas['imagen'];?>" alt="" class="info-imagen">
                 </div>
                 <div class="info-benefactor">
                     <h4 class="no-margin">Empresa:</h4>

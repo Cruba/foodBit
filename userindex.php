@@ -49,6 +49,8 @@ $rowA = $sqlA->fetch_array();
     <section class="cabecera">
         <div class="contenedor">
             <h1 class="centrar-texto">Bienvenido             <?php echo   $_SESSION['nombre']; ?> </h1>
+            <img src="<?php echo $rowA['imagen'];?>" alt="">
+
             <div class="spacer-30 "></div>
             <form class="formulario fondoblanco" method="post" action="archivo_actualizar_mensaje.php">
             <div class="barrita"></div>
