@@ -51,7 +51,7 @@ $rowA = $sqlA->fetch_array();
         <main class=" ">
             <div class="contenedor2">
 
-            <form class="formulario fondoblanco" method="post" action="archivo_actualizar.php">
+            <form class="formulario fondoblanco" method="post" action="archivo_actualizar.php"   enctype="multipart/form-data">
                 <div class="barrita"></div>
                 <h2>Configurar</h2>
                 <div class="margin-2">
@@ -63,8 +63,8 @@ $rowA = $sqlA->fetch_array();
                     <input class="campo__field2" type="text" id="empresa" name="empresa" value="<?php echo $rowA['empresa'];?>" >
                 </div>
                 <div class="margin-2">
-                    <label class="campo__field2 fondoprimario" for="img">Cambiar logo de la empresa</label>
-                    <input type="file" id="img" name="img" accept="image/*" class=" desaparecer">
+                    <label class="campo__field2 fondoprimario" for="image">Cambiar logo de la empresa</label>
+                    <input type="file" id="image" name="image"  class=" desaparecer">
                 </div>
                 <div class="margin-2">
                     <label class="campo__label2" for="tel">Telefono</label>
