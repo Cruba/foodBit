@@ -65,7 +65,7 @@
     <header class="header2">
         <div class="contenedor">
             <div class="barra">
-                <a class="logo no-margin centrar-texto" href="index.html">
+                <a class="logo no-margin centrar-texto" href="index.php">
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">

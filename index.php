@@ -17,14 +17,14 @@
         <div class="header__color">
             <div class="contenedor">
                 <div class="barra">
-                    <a class="logo no-margin centrar-texto" href="index.html">
+                    <a class="logo no-margin centrar-texto" href="index.php">
                         <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                         
                         <nav class="navegacion">
-                            <a href="index.html" class="navegacion__enlace">Inicio</a>
-                            <a href="benefactores.html" class="navegacion__enlace">Benefactores</a>
+                            <a href="index.php" class="navegacion__enlace">Inicio</a>
+                            <a href="benefactores.php" class="navegacion__enlace">Benefactores</a>
                             <a href="registrar.html" class="navegacion__enlace">Registrar</a>
-                            <a href="iniciarsesion.html" class="navegacion__enlace">Iniciar Sesiòn</a>
+                            <a href="iniciarsesion.php" class="navegacion__enlace">Iniciar Sesiòn</a>
 
                         </nav>
                 </div>
@@ -39,6 +39,15 @@
     <section class="nosotros">
         <div class="contenedor">
             <div class="nosotros-principal">
+            <?php
+
+if(isset($_GET['true'])) {
+    echo "<br>";
+  echo "<center class='mensaje exitoso'>Solicitud enviada con exito, espera a que se contacten contigo</center>";
+}else {
+
+}
+?>
             <h1 class="centrar-texto">Nosotros</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error maxime perspiciatis quod nulla ex nisi eos ut ratione accusantium reiciendis! Corporis, possimus quibusdam. In accusantium doloremque, beatae ipsa blanditiis doloribus voluptatum assumenda commodi quia quasi nemo harum quod ducimus itaque officia sapiente dolores ratione rem, reiciendis fuga iure iusto. Exercitationem?</p>
             </div>
@@ -101,14 +110,15 @@
     <footer class="footer">
         <div class="contenedor">
             <div class="barra">
-                <a class="logo no-margin centrar-texto" href="index.html">
+                <a class="logo no-margin centrar-texto" href="index.php">
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
-                        <a href="index.html" class="navegacion__enlace">Inicio</a>
-                        <a href="benefactores.html" class="navegacion__enlace">Benefactores</a>
-                        <a href="registrar.html" class="navegacion__enlace">Registrar</a>
-                        <a href="iniciarsesion.html" class="navegacion__enlace">Iniciar Sesiòn</a>
+                    <a href="index.php" class="navegacion__enlace">Inicio</a>
+                            <a href="benefactores.php" class="navegacion__enlace">Benefactores</a>
+                            <a href="registrar.html" class="navegacion__enlace">Registrar</a>
+                            <a href="iniciarsesion.php" class="navegacion__enlace">Iniciar Sesiòn</a>
+
 
                     </nav>
     

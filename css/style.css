@@ -73,6 +73,10 @@ td{
     background-color: var(--gris);
 }
 
+textarea {
+    resize: none;
+}
+
   /* A Y U D A S */
 
   .centrado{
@@ -448,7 +452,10 @@ td{
         margin-bottom: 2rem;
         border: none;
         width: 100%;
+        cursor: pointer;
     }
+    
+    .pointer {cursor: pointer;}
 
     .descripcion{
         background-color: var(--gris);

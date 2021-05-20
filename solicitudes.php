@@ -25,7 +25,7 @@ if (isset($_SESSION['identificador'])){
     <header class="header2">
         <div class="contenedor">
             <div class="barra">
-                <a class="logo no-margin centrar-texto" href="index.html">
+                <a class="logo no-margin centrar-texto" href="index.php">
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
@@ -48,42 +48,33 @@ if (isset($_SESSION['identificador'])){
                 <div class="barrita"></div>
                     <h2>Solicitudes</h2>
                     <table id="websendeos">
-
-                        <tr>
+                    <tr>
                              <th>Nombre</th>
                              <th>Correo</th>
                              <th>Telefono</th>
                              <th>Beneficiencia y/o Empresa</th>
                              <th>Mensaje</th>
                         </tr>
+                    <?php
+  		require "conexion.php";
+    
+        $query="SELECT * FROM solicitud WHERE idusuario = '".$_SESSION['id']."'";
+        $resultado = $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion));
+        while ($filas=$resultado->fetch_array())
+        {
+
+      ?>
+
                         <tr>
-                             <td>Web Endeos Cortesía</td>
-                             <td>No incluido</td>
-                             <td>No</td>
-                             <td>€</td>
-                             <td><a href="#" target="_blank">Ver demo</a></td>
+                             <td><?php echo $filas[2]?></td>
+                             <td><?php echo $filas[3]?></td>
+                             <td><?php echo $filas[4]?></td>
+                             <td><?php echo $filas[5]?></td>
+                             <td><?php echo $filas[6]?></a></td>
                         </tr>
-                        <tr>
-                             <td>Web Endeos One Page</td>
-                             <td>Sí incluido</td>
-                             <td>No</td>
-                             <td>€€</td>
-                             <td><a href="#" target="_blank">Ver demo</a></td>
-                        </tr>
-                        <tr>
-                             <td>Web Endeos Estándar</td>
-                             <td>Sí incluido</td>
-                             <td>Sí</td>
-                             <td>€€€</td>
-                             <td><a href="#" target="_blank">Ver demo</a></td>
-                        </tr>
-                        <tr>
-                             <td>Web Endeos Profesional</td>
-                             <td>Sí incluido</td>
-                             <td>Sí</td>
-                             <td>€€€€</td>
-                             <td><a href="#" target="_blank">Ver demo</a></td>
-                        </tr>
+                        <?php
+        }
+      ?>
                     </table>
 
                 </div>

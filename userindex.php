@@ -20,10 +20,18 @@ if (isset($_SESSION['identificador'])){
 
 </head>
 <body class="fondogris">
+<?php
+
+require "conexion.php";
+
+$sqlA = $conexion->query("SELECT * FROM usuarios WHERE identificador = '".$_SESSION['id']."'");
+$rowA = $sqlA->fetch_array();
+
+?>
     <header class="header2">
         <div class="contenedor">
             <div class="barra">
-                <a class="logo no-margin centrar-texto" href="index.html">
+                <a class="logo no-margin centrar-texto" href="index.php">
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
@@ -41,9 +49,34 @@ if (isset($_SESSION['identificador'])){
     <section class="cabecera">
         <div class="contenedor">
             <h1 class="centrar-texto">Bienvenido             <?php echo   $_SESSION['nombre']; ?> </h1>
+            <div class="spacer-30 "></div>
+            <form class="formulario fondoblanco" method="post" action="archivo_actualizar_mensaje.php">
+            <div class="barrita"></div>
+            
+            <?php
+
+if(isset($_GET['true'])) {
+    echo "<br>";
+  echo "<center class='mensaje exitoso'>Mensaje actualizado con exito</center>";
+}else {
+
+}
+?>
+            <h2>Configurar</h2>
+            <div class="margin-2">
+                    <label class="campo__label2" for="descripcion">Descripción del servicio</label>
+                    <textarea name="descripcion" type="text"  class="campo__field2" id="password" cols="30" rows="5"><?php echo $rowA['descripcion'];?></textarea>
+                </div>
+                <div class="">
+                    <input type="submit" value="Actualizar" class="boton2 boton--primario">
+                </div>
+            </form>
+        
+        </div>
+        <div class="spacer-30 "></div>
+        <div class="spacer-30 "></div>
 
         </div>
-
     </section>
 
 

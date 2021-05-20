@@ -17,19 +17,6 @@
 <body>
 <?php
 
-
-if(isset($_GET['usr'])) {
-
-}
-elseif(isset($_GET['true'])) {
-  echo "<center class='mensaje exitoso'>Solicitud enviada con exito, espera a que se contacten contigo</center>";
-}else {
-    echo "<center class='mensaje fallido'>Algo fallo, favor de realizar de nuevo la solicitud</center>";
-
-}
-?>
-            <?php
-
 $consulta = ConsultarUsuario($_GET['usr']);
 
 function ConsultarUsuario($id){
@@ -48,8 +35,6 @@ function ConsultarUsuario($id){
 				
 
 			?>
-
-
     <header class="header">
         <div class="header__color">
             <div class="contenedor">
@@ -64,66 +49,51 @@ function ConsultarUsuario($id){
                             <a href="registrar.html" class="navegacion__enlace">Registrar</a>
                             <a href="iniciarsesion.php" class="navegacion__enlace">Iniciar Sesiòn</a>
 
+
                     </nav>
                 </div>
             </div>
             <div class="header__texto">
-                <h2 class="no-margin">Solicitar</h2>
+                <h2 class="no-margin">Benefactor</h2>
                 <p class="no-margin blanco"> <?php echo $filas['empresa']?></p>
             </div>
         </div>
     </header>
 
-
-
     <main>
         <div class="contenedor">
-            <h1 class="centrar-texto">Solicitud</h1>
+            <h1 class="centrar-texto"><?php echo $filas['empresa']?></h1>
 
+            <div class="informacion">
+                <div class="info-benefactor">
+                    <img src="img/benefactor1.png" alt="" class="info-imagen">
+                </div>
+                <div class="info-benefactor">
+                    <h4 class="no-margin">Empresa:</h4>
+                    <p class="no-margintop"><?php echo $filas['empresa']?></p>
+                    <h4 class="no-margin">Contacto:</h4>
+                    <p class="no-margintop"><span>Telefono </span> <?php echo $filas['telefono']?></p>
+                    <p class="no-margintop"><span>Correo </span><?php echo $filas['correo']?></p>
+                    <h4 class="no-margin">Ubicación:</h4>
+                    <p class="no-margintop"> <?php echo $filas['direccion']?></p>
+                    
+                   <a href="solicitar.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton2 boton--primario pointer" > Contactar</button> </a>
+                </div>
+            </div>
 
-            <form action="archivo_solicitar.php" method="POST" class="form-solicitud">
-                <div class="campo">
-                    <label class="campo__label2" for="nombre">Nombre</label>
-                    <input class="campo__field2" type="text" id="nombre" name="nombre" >
-                </div>
-                <div class="campo">
-                    <label class="campo__label2" for="email">Correo</label>
-                    <input class="campo__field2" type="email" id="email" name="correo">
-                </div>
-                <div class="campo">
-                    <label class="campo__label2" for="email">Beneficiencia solicitada</label>
-                    <input class="campo__field2" type="text" id="" name="" value=" <?php echo $filas['empresa']?> " readonly>  
-                </div>   
-
-                <div class="campo">
-                    <label class="campo__label2" for="email" readonly>Id empresa</label>
-                    <input class="campo__field2" type="email" id="email" name="idusuario" value=" <?php echo $filas['identificador']?> "  readonly>  
-                </div>   
-
-                <div class="campo">
-                    <label class="campo__label2" for="tel">Telefono</label>
-                    <input class="campo__field2" type="tel" id="tel" name="Telefono">
-                </div>
-                <div class="campo">
-                    <label class="campo__label2" for="razon">Beneficiencia y/o Empresa</label>
-                    <input class="campo__field2" type="text" id="nombre" name="empresa"> 
-                </div>
-                <div class="campo">
-                    <label class="campo__label2" for="mensaje">Mensaje</label>
-                    <textarea name="mensaje"   class="campo__field2 campo__field-textarea2" id="mensaje" cols="30" rows="10"></textarea>
-                </div>
-                <div class="campo">
-                    <input type="submit" value="Enviar Solicitud" class="boton boton--primario">
-                    <br>
-                    <?php
+            <div class="descripcion">
+                <h4>Descripción</h4>
+                <p><?php echo $filas['descripcion']?></p>
+            </div>
+        </div>
+    </main>
+    <?php
         }
         }
       ?>
-                </div>
-            </form>
-        </div>
-    </main>
-   <footer class="footer">
+    <div class="spacer-20"></div>
+
+    <footer class="footer">
         <div class="contenedor">
             <div class="barra">
                 <a class="logo no-margin centrar-texto" href="index.php">
