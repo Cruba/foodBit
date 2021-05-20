@@ -68,7 +68,7 @@ $rowA = $sqlA->fetch_array();
                 </div>
                 <div class="margin-2">
                     <label class="campo__label2" for="tel">Telefono</label>
-                    <input class="campo__field2" type="tel" id="tel" name="telefono" value="<?php echo $rowA['telefono'];?>">
+                    <input class="campo__field2" type="tel" id="tel" name="telefono"  value="<?php echo $rowA['telefono'];?>" data-inputmask="'mask': '999 999 9999'">
                 </div>
                 <div class="margin-2">
                     <label class="campo__label2" for="email">Correo</label>
@@ -100,6 +100,10 @@ $rowA = $sqlA->fetch_array();
         </div>
 
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+    <script src="js/inputmask.js"></script>
+
 </body>
 </html>
 <?php

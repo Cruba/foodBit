@@ -8,9 +8,9 @@ if (isset($_POST['descripcion'])){
     $descripcion=($_POST['descripcion']);
 
 
-   $sqlE = $conexion->query("UPDATE usuarios SET descripcion = '$descripcion'");
+   $sqlE = $conexion->query("UPDATE usuarios SET descripcion = '$descripcion'  WHERE identificador = '".$_SESSION['id']."'");
 
-				if($sqlE) {header('Location: userindex.php?true=login');
+				if($sqlE) {header('Location: userindex.php?true=');
 }
 }
 ?>

@@ -101,8 +101,8 @@ function ConsultarUsuario($id){
                 </div>   
 
                 <div class="campo">
-                    <label class="campo__label2" for="tel">Telefono</label>
-                    <input class="campo__field2" type="tel" id="tel" name="Telefono">
+                    <label class="campo__label2" for="telefono">Telefono</label>
+                    <input class="campo__field2" type="telefono" id="telefono" name="telefono" data-inputmask="'mask': '999 999 9999'">
                 </div>
                 <div class="campo">
                     <label class="campo__label2" for="razon">Beneficiencia y/o Empresa</label>
@@ -142,6 +142,10 @@ function ConsultarUsuario($id){
         </div>
 
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+    <script src="js/inputmask.js"></script>
+
 </body>
 
 </html>
