@@ -67,18 +67,18 @@ if(isset($_GET['true'])) {
     <section class="contacto">
         <div class="contenedor">
             <h1 class="centrar-texto contacto__titulo">Contacto</h1>
-            <form class="formulario" action="">
+            <form class="formulario" action="email.php" method = "post">
                 <div class="campo">
                 <label class="campo__label"  for="nombre">Nombre</label>
-                <input type="text" class="campo__field" placeholder="" id="nombre">
+                <input name="name" type="text" class="campo__field" placeholder="" id="nombre">
               </div>
               <div class="campo">
                 <label class="campo__label" for="email">Correo Electrónico</label>
-                <input type="email" class="campo__field" placeholder="" id="email">
+                <input name="email" type="email" class="campo__field" placeholder="" id="email">
                 </div>
                 <div class="campo">
                 <label class="campo__label" for="mensaje">Mensaje</label>
-                <textarea name=""  class="campo__field  "id="mensaje" cols="30" rows="10"></textarea>
+                <textarea name="message"  class="campo__field  "id="mensaje" cols="30" rows="10"></textarea>
                 </div>
                 <div class="campo">
                     <input type="submit" placeholder="enviar" class="boton boton--primario">
