@@ -12,7 +12,15 @@ if (isset($_POST['nombre'])  and isset($_POST['correo']) and isset($_POST['empre
     $ingresar=mysqli_query($conexion,'INSERT INTO solicitud(nombre,idusuario,correo,telefono,empresa,mensaje) VALUES
     ("'.$nombre.'","'.$idusuario.'","'.$correo.'","'.$tel.'","'.$empresa.'","'.$mensaje.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
     //redirección
+    $from = "earc_r@hotmail.com";
+    $to = "alainsc.bc@gmail.com";
+    $subject = "Checking PHP mail";
+    $message = "PHP mail works just fine";
+    $headers = "From:" . $from;
+    mail($to , $subject , $message , $headers);
    header ('location: index.php?true=login');
+   
+
 }//si no se enviaron datos
 else{
     header ('location: ./');
