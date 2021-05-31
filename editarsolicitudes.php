@@ -50,30 +50,26 @@ if (isset($_SESSION['identificador'])){
 function ConsultarUsuario($id){
     include 'conexion.php';
     
-    $query="SELECT * FROM usuarios WHERE identificador= '".$id."' ";
+    $query="SELECT * FROM solicitud WHERE identificador= '".$id."' ";
         $resultado= $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion) );
         while ($filas=$resultado->fetch_array()){
 
 			?>
 
-            <form class="formulario fondoblanco" method="post" action="actualizatbenef.php"   enctype="multipart/form-data">
+            <form class="formulario fondoblanco" method="post" action="actualizarsolicitud.php"   enctype="multipart/form-data">
                 <div class="barrita"></div>
-                <h2>Editar beneficiencia <?php echo $filas['empresa'];?></h2>
+                <h2>Editar solicitud de <?php echo $filas['empresa'];?> </h2>
                 <div class="margin-2">
                     <label class="campo__label2" for="nombre">Identificador</label>
                     <input class="campo__field2" type="text" id="identificador" name="identificador" value="<?php echo $filas[0]?>" readonly>
                 </div>
                 <div class="margin-2">
                     <label class="campo__label2" for="nombre">Nombre</label>
-                    <input class="campo__field2" type="text" id="nombre" name="nombre" value="<?php echo $filas[1]?>">
+                    <input class="campo__field2" type="text" id="nombre" name="nombre" value="<?php echo $filas[2]?>">
                 </div>
                 <div class="margin-2">
                     <label class="campo__label2" for="empresa">Empresa</label>
                     <input class="campo__field2" type="text" id="empresa" name="empresa" value="<?php echo $filas['empresa'];?>" >
-                </div>
-                <div class="margin-2">
-                    <label class="campo__field2 fondoprimario" for="image">Cambiar logo de la empresa</label>
-                    <input type="file" id="image" name="image"  class=" desaparecer">
                 </div>
                 <div class="margin-2">
                     <label class="campo__label2" for="tel">Telefono</label>
@@ -84,13 +80,10 @@ function ConsultarUsuario($id){
                     <input class="campo__field2" type="email" id="email" name="correo" value="<?php echo $filas['correo'];?>">
                 </div>
                 <div class="margin-2">
-                    <label class="campo__label2" for="razon">Direcciòn</label>
-                    <input class="campo__field2" type="text" id="razon" name="direccion" value="<?php echo $filas['direccion'];?>">
+                    <label class="campo__label2" for="razon">Mensaje</label>
+                    <input class="campo__field2" type="text" id="razon" name="direccion" value="<?php echo $filas['mensaje'];?>" readonly>
                 </div>
-                <div class="margin-2">
-                    <label class="campo__label2" for="password">Contraseña</label>
-                    <input name="password" type="password"  class="campo__field2" id="password"  value="pass">
-                </div>
+               
                 <div class="">
                     <input type="submit" value="Actualizar" class="boton2 boton--primario">
                 </div>

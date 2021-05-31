@@ -15,6 +15,7 @@ if (isset($_SESSION['identificador'])){
     <title>FoodBit</title>
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/23170c9998.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/normalize.css">
     <link href="css/stacktable.css" rel="stylesheet">
@@ -53,6 +54,8 @@ if (isset($_SESSION['identificador'])){
                              <th>Telefono</th>
                              <th>Beneficiencia y/o Empresa</th>
                              <th>Mensaje</th>
+                             <th>Editar</th>
+
                         </tr>
                         <?php
 
@@ -74,11 +77,16 @@ function ConsultarUsuario($id){
 
 			?>
                         <tr>
+                            
                              <td><?php echo $filas[2]?></td>
                              <td><?php echo $filas[3]?></td>
                              <td><?php echo $filas[4]?></td>
                              <td><?php echo $filas[5]?></td>
-                             <td><?php echo $filas[6]?></a></td>
+                             <td><?php echo $filas[6]?></td>
+                             <td>
+                            <a href="editarsolicitudes.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--editar pointer" > <i class="fas fa-user-edit fa-lg"></i></button> </a>
+                            <a href="eliminarsolicitud.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--borrar pointer" > <i class="fas fa-user-slash fa-lg"></i></button> </a>
+                            </td>
                         </tr>
                         <?php
         }

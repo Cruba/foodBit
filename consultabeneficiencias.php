@@ -47,7 +47,7 @@ if (isset($_SESSION['identificador'])){
             <div class="contenedor3">
             <div class="formulario fondoblanco" action="">
                 <div class="barrita"></div>
-                    <h2>Solicitudes</h2>
+                    <h2>Beneficiencias Registradas</h2>
                     <table id="websendeos">
                     <tr>
                              <th>Nombre</th>
@@ -56,7 +56,7 @@ if (isset($_SESSION['identificador'])){
                              <th>Correo</th>
                              <th>Dirección</th>
                              <th>Descripción</th>
-                             <th>Edit</th>
+                             <th>Editar</th>
 
                         </tr>
                     <?php
@@ -79,7 +79,7 @@ if (isset($_SESSION['identificador'])){
                             <td>
                             <a href="adminsolicitudes.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--solicitud pointer" > <i class="fas fa-hands-helping fa-lg"></i></button> </a>
                             <a href="editarbeneficiencia.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--editar pointer" > <i class="fas fa-user-edit fa-lg"></i></button> </a>
-                            <a href="adminsolicitudes.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--borrar pointer" > <i class="fas fa-user-slash fa-lg"></i></button> </a>
+                            <a href="eliminarbeneficiencia.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--borrar pointer" > <i class="fas fa-user-slash fa-lg"></i></button> </a>
 
 
                             </td>
