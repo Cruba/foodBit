@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo.png">
-    <title>FoodBit</title>
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="css/normalize.css">
-    
-
-
-    <?php
+<?php
     if(isset($_POST['entrar'])) {
 
       require("conexion.php");
@@ -21,7 +6,7 @@
       $correo = $conexion ->real_escape_string($_POST['correo']);
       $password = md5($_POST['password']);
 
-      $consulta = "SELECT correo,pass,identificador, nombre FROM usuarios WHERE correo = '$correo' AND pass = '$password'";
+      $consulta = "SELECT correo,pass,identificador, nombre FROM administrador WHERE correo = '$correo' AND pass = '$password'";
 
       if($resultado = $conexion->query($consulta)) {
         while($row = $resultado->fetch_array()) {
@@ -46,13 +31,13 @@
           $_SESSION['nombre'] = $name;
           $_SESSION['correo'] = $userok;
           $_SESSION['id'] = $id;
-          header("Location: userindex.php");
+          header("Location: adminindex.php");
 
         }
 
         else {
 
-          Header("Location: iniciarsesion.php?error=login");
+          Header("Location: inicioadmin.php?error=login");
 
         }
 
@@ -60,6 +45,22 @@
 
 
     }  ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png">
+    <title>FoodBit</title>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    
+
+
 </head>
 <body class="fondogris">
     <header class="header2">
@@ -69,9 +70,8 @@
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
-                       
-                        <a href="registrar.html" class="navegacion__enlace">Registrar</a>
-                        <a href="inicioadmin.php" class="navegacion__enlace">Administrador</a>
+                    <a href="iniciarsesion.php" class="navegacion__enlace">Iniciar Sesiòn</a>    
+                        <a href="registrar.html" class="navegacion__enlace">Registrar</a
 
                     </nav>
 
@@ -86,14 +86,8 @@
         <form class="formulario fondoblanco" action="" method="post">
             <div class="barrita"></div>
 
-            <?php
-    if(isset($_GET['true'])) {
 
-      echo " <br><center class='mensaje exitoso'>Registro exitoso inicia sesión</center>";
-    } 
-
-    ?>
-            <h2>Iniciar Sesión</h2>
+            <h2>Inicio Administrador</h2>
             <div class="margin-2">
                 <label class="campo__label2" for="email">Correo</label>
                 <input class="campo__field2" type="email" id="email" name="correo" required>

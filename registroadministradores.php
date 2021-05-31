@@ -1,3 +1,9 @@
+<?php
+session_start();
+//si hay una sesión
+if (isset($_SESSION['identificador'])){
+    //se muestra el contenido de la página web
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +26,13 @@
                     <h1 class="logo__nombre">Food<span class="logo__bold">Bit.</span></h1></a>
                     
                     <nav class="navegacion">
-                       
-                        <a href="iniciarsesion.php" class="navegacion__enlace">Iniciar Sesiòn</a>
-                        <a href="inicioadmin.php" class="navegacion__enlace">Administrador</a>
-
+                    <a href="consultabeneficiencias.php" class="navegacion__enlace">Beneficiencias</a>
+                        <a href="registroadministradores.php" class="navegacion__enlace">Nuevo administrador</a>
+                        <a href="configuraradmin.php" class="navegacion__enlace">Configurar</a>
+                        <a href="cerrar_sesion.php" class="navegacion__enlace">Salir</a>
 
                     </nav>
+    
     
             </div>
         </div>
@@ -33,7 +40,7 @@
     <div class="spacer-30"></div>
     <main class=" ">
         <div class="contenedor2">
-        <form class="formulario fondoblanco" method="POST" action="archivo_registrar.php"  enctype="multipart/form-data" >
+        <form class="formulario fondoblanco" method="POST" action="archivo_registraradmin.php"  enctype="multipart/form-data" >
             <div class="barrita"></div>
             <h2>Registrar</h2>
             <div class="margin-2">
@@ -41,25 +48,10 @@
                 <input class="campo__field2" type="text" id="nombre" name="nombre" required>
             </div>
             <div class="margin-2">
-                <label class="campo__label2" for="empresa">Empresa</label>
-                <input class="campo__field2" type="text" id="empresa" name="empresa" required>
-            </div>
-            <div class="margin-2">
-                <label class="campo__field2 fondoprimario" for="image">Subir logo de la empresa</label>
-                <input type="file" id="image" name="image" class=" desaparecer">
-            </div>
-            <div class="margin-2">
-                <label class="campo__label2" for="tel">Telefono</label>
-                <input class="campo__field2" type="tel" id="tel" name="telefono" data-inputmask="'mask': '999 999 9999'">
-            </div>
-            <div class="margin-2">
                 <label class="campo__label2" for="correo">Correo</label>
                 <input class="campo__field2" type="email" id="correo" name="correo" required>
             </div>
-            <div class="margin-2">
-                <label class="campo__label2" for="direccion">Direcciòn</label>
-                <input class="campo__field2" type="text" id="direccion" name="direccion" >
-            </div>
+
             <div class="margin-2">
                 <label class="campo__label2" for="pass">Contraseña</label>
                 <input type="password"  class="campo__field2" id="pass" name="pass" required>
@@ -83,3 +75,10 @@
 <script src="js/inputmask.js"></script>
 </body>
 </html>
+<?php
+}//si no hay sesión
+else{
+    //se redirecciona
+  header ('location: ./');
+}
+?>

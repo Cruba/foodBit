@@ -10,6 +10,9 @@
     --secundario: #f0a500;
     --gris: #EFEEEE;
     --rojo: crimson;
+    --azul: #228be6;
+    --amarillo2: #f7da0d;
+
     
 }
 
@@ -536,6 +539,8 @@ textarea {
         margin: 0 auto;
     }
 
+    
+
     @media (min-width: 768px){
         .contenedor2{
             max-width: 60rem;
@@ -578,4 +583,36 @@ textarea {
 
     .fallido{
         background-color: var(--rojo);
+    }
+
+    /* P A G I N A S  D E  A D M I N I S T R A D O R E S */
+
+    .contenedor3{
+        max-width: 130rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+        
+    .boton--solicitud{
+        background-color: var(--azul);
+    }
+
+    .boton--editar{
+        background-color: var(--amarillo2);
+    }
+
+    .boton--borrar{
+        background-color: var(--rojo);
+    }
+
+    .boton3{
+        display: block; /* para tomar todo el espacio disponible */
+        color: var(--blanco);
+        text-align: center; 
+        padding: 1rem;
+        margin: .5rem;
+        border: none;
+        border-radius: 1rem;
+        width: 100%;
     }

@@ -9,7 +9,7 @@ $msg = $_REQUEST['message'];
 
 $email_from = $name.'<'.$email.'>';
 
-$headers = "MIME-Version: 1.1";
+$headers .= "MIME-Version: 1.1";
 $headers .= "Content-type: text/html; charset=iso-8859-1";
 $headers .= "From: ".$name.'<'.$email.'>'."\r\n"; // Sender's E-mail
 $headers .= "Return-Path:"."From:" . $email;
