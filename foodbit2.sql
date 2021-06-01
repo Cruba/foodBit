@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2021 at 09:47 AM
+-- Generation Time: Jun 01, 2021 at 07:21 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `foodbit2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `administrador`
+--
+
+CREATE TABLE `administrador` (
+  `identificador` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `pass` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `administrador`
+--
+
+INSERT INTO `administrador` (`identificador`, `nombre`, `correo`, `pass`) VALUES
+(1, 'prueba', 'prueba@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(2, 'admin', 'admin@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -48,7 +69,7 @@ INSERT INTO `solicitud` (`identificador`, `idusuario`, `nombre`, `correo`, `tele
 (4, 8, 'serla', 'serla@hotmail.com', '', 'Helados para todos', 'estoy interesado en adquirir alguno de sus productos'),
 (5, 2, 'Clare Villanueva', 'clare@hotmail.com', '', 'manitas sangrantes', 'necesitamos ayuda con los inmigrantes y damnificados'),
 (6, 8, 'James Ecozia', 'james@hotmail.com', '', 'Anchies', 'Somos una empresa dedicada a ayudar a las personas damnificadas, las reubicamos '),
-(7, 1, 'Asia Mar', 'asi@hotmail.com', '265 262 3323', 'carlos asosiation', 'estamos interesados en sus informacion');
+(7, 1, 'Asia Marte', 'asi@hotmail.com', '265 262 3323', 'carlos asosiation', 'estamos interesados en sus informacion');
 
 -- --------------------------------------------------------
 
@@ -73,7 +94,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`identificador`, `nombre`, `empresa`, `imagen`, `telefono`, `correo`, `direccion`, `pass`, `descripcion`) VALUES
-(1, 'arturo lopez', 'KFC', 0x62656e65666163746f72362e706e67, '0', 'kfc@hotmail.com', 'Perif, Carr. Libre Monterrey - Reynosa 1000, Col. Loma Real De Jara, 88750 Reynosa, Tamps.', '202cb962ac59075b964b07152d234b70', 'comprometidos a ayudar '),
+(1, 'arturo lopez quesada', 'pollo church', '', '955 451 2211', 'kfc@hotmail.com', 'Perif, Carr. Libre Monterrey - Reynosa 1000, Col. Loma Real De Jara, 88750 Reynosa, Tamps.', '1a1dc91c907325c69271ddf0c944bc72', 'comprometidos a ayudar '),
 (2, 'Carlos Cerceda', 'Ihop', 0x62656e65666163746f72332e706e67, '899', 'ihop@hotmail.com', '1900 S 10th St, McAllen, TX 78503, Estados Unidos', '202cb962ac59075b964b07152d234b70', 'comprometidos a ayudar a las personas '),
 (3, 'Marco Castillo', 'Wings Stop', 0x62656e65666163746f72322e706e67, '899', 'wingsstop@hotmail.com', 'Carr. Libre Monterrey - Reynosa 106 D, Fuentes del Valle, 88710 Reynosa, Tamps.', '202cb962ac59075b964b07152d234b70', 'comprometidos a ayudar a las personas '),
 (4, 'Karla Nar', 'Applebee´s', 0x62656e65666163746f72312e706e67, '898 985 6566', 'Apple@hotmail.com', 'Carr. Libre Monterrey - Reynosa km 103-5 126, Fuentes del Valle, 88746 Reynosa, Tamps.', '202cb962ac59075b964b07152d234b70', 'comprometidos a ayudar a las personas '),
@@ -85,6 +106,12 @@ INSERT INTO `usuarios` (`identificador`, `nombre`, `empresa`, `imagen`, `telefon
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`identificador`);
 
 --
 -- Indexes for table `solicitud`
@@ -103,16 +130,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `administrador`
+--
+ALTER TABLE `administrador`
+  MODIFY `identificador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `identificador` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `identificador` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `identificador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `identificador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
