@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/normalize.css">
-    
 
 
     <?php

@@ -10,8 +10,10 @@ if (isset($_POST['nombre']) and isset($_POST['empresa']) and isset($_POST['corre
     $correo=($_POST['correo']);
     $direccion=($_POST['direccion']);
     $pass=md5($_POST['pass']);
-    $ingresar=mysqli_query($conexion,'INSERT INTO usuarios(nombre,empresa, imagen,telefono,correo,direccion, pass) VALUES
-    ("'.$nombre.'","'.$empresa.'","'.$file.'","'.$tel.'","'.$correo.'","'.$direccion.'","'.$pass.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
+    $descripcion=($_POST['empresa']);
+
+    $ingresar=mysqli_query($conexion,'INSERT INTO usuarios(nombre,empresa, imagen,telefono,correo,direccion, pass, 	descripcion) VALUES
+    ("'.$nombre.'","'.$empresa.'","'.$file.'","'.$tel.'","'.$correo.'","'.$direccion.'","'.$pass.'","'.$descripcion.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
     //redirección
 
     if($ingresar){

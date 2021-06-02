@@ -80,6 +80,10 @@ textarea {
     resize: none;
 }
 
+table{
+    width: 100%;
+}
+
   /* A Y U D A S */
 
   .centrado{
@@ -142,6 +146,14 @@ textarea {
         width: 20rem;
         
         
+    }
+
+    .azul{
+        color: var(--azul);
+    }
+
+    .rojo{
+        color: var(--rojo);
     }
     /* B o t o n e s */
 
@@ -565,6 +577,7 @@ textarea {
         min-width: 100%;
         background-color: var(--secundario);
     }
+    
 
     /* M E N S A J E S */
     
@@ -616,3 +629,28 @@ textarea {
         border-radius: 1rem;
         width: 100%;
     }
+    .barrita1{
+        margin: -1rem;
+        height: .5rem;
+        min-width: 100%;
+        background-color: var(--azul);
+    }
+
+    .barrita2{
+        margin: -1rem;
+        height: .5rem;
+        min-width: 100%;
+        background-color: var(--rojo);
+    }
+
+    .fondoazul th{
+        background-color: var(--azul);
+    }
+
+    .fondorojo th{
+        background-color: var(--rojo);
+    }
+
+
+    /* B O T O N E S  D E  E S T A D O  D E  S O L I C I T U D */
+

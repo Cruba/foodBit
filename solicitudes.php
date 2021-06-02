@@ -42,11 +42,10 @@ if (isset($_SESSION['identificador'])){
 
     <main>
         <div class="spacer-30"></div>
-        <main class=" ">
-            <div class="contenedor">
+            <div class="contenedor3">
             <div class="formulario fondoblanco" action="">
                 <div class="barrita"></div>
-                    <h2>Solicitudes</h2>
+                    <h2>Solicitudes Pendientes</h2>
                     <table id="websendeos">
                     <tr>
                              <th>Nombre</th>
@@ -54,11 +53,13 @@ if (isset($_SESSION['identificador'])){
                              <th>Telefono</th>
                              <th>Beneficiencia y/o Empresa</th>
                              <th>Mensaje</th>
+                             <th>Fecha</th>
+                             <th>Cambiar Estado</th>
                         </tr>
                     <?php
   		require "conexion.php";
     
-        $query="SELECT * FROM solicitud WHERE idusuario = '".$_SESSION['id']."'";
+        $query="SELECT * FROM solicitud WHERE idusuario = '".$_SESSION['id']."' AND estado = 0";
         $resultado = $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion));
         while ($filas=$resultado->fetch_array())
         {
@@ -71,10 +72,105 @@ if (isset($_SESSION['identificador'])){
                              <td><?php echo $filas[4]?></td>
                              <td><?php echo $filas[5]?></td>
                              <td><?php echo $filas[6]?></a></td>
+                             <td><?php echo $filas[8]?></a></td>
+                             <td>      <a href="estadosolicitud1.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--solicitud pointer" >Aprobada </button> </a>
+                            <a href="estadosolicitud2.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--borrar pointer" >Desaprobar </button> </a> </td>
                         </tr>
                         <?php
         }
       ?>
+      
+                    </table>
+
+                </div>
+            
+        </div>
+        </main>
+
+        <main>
+        <div class="spacer-30"></div>
+            <div class="contenedor3">
+            <div class="formulario fondoblanco" action="">
+                <div class="barrita1"></div>
+                    <h2 class="azul">Solicitudes Activas</h2>
+                    <table id="websendeos">
+                    <tr class="fondoazul">
+                             <th >Nombre</th>
+                             <th>Correo</th>
+                             <th>Telefono</th>
+                             <th>Beneficiencia y/o Empresa</th>
+                             <th>Mensaje</th>
+                             <th>Fecha</th>
+                             <th>Cambiar Estado</th>
+                        </tr>
+                    <?php
+    
+        $query="SELECT * FROM solicitud WHERE idusuario = '".$_SESSION['id']."' AND estado = 1";
+        $resultado = $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion));
+        while ($filas=$resultado->fetch_array())
+        {
+
+      ?>
+
+                        <tr>
+                             <td><?php echo $filas[2]?></td>
+                             <td><?php echo $filas[3]?></td>
+                             <td><?php echo $filas[4]?></td>
+                             <td><?php echo $filas[5]?></td>
+                             <td><?php echo $filas[6]?></a></td>
+                             <td><?php echo $filas[8]?></a></td>
+                             <td>      <a href="estadosolicitud.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--editar pointer" >Pendiente </button> </a>
+                            <a href="estadosolicitud2.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--borrar pointer" >Desaprobar </button> </a> </td>
+                        </tr>
+                        <?php
+        }
+      ?>
+      
+                    </table>
+
+                </div>
+            
+        </div>
+        </main>
+        <main>
+        <div class="spacer-30"></div>
+            <div class="contenedor3">
+            <div class="formulario fondoblanco" action="">
+                <div class="barrita2"></div>
+                    <h2 class="rojo">Solicitudes Inactivas</h2>
+                    <table id="websendeos">
+                    <tr class="fondorojo">
+                             <th>Nombre</th>
+                             <th>Correo</th>
+                             <th>Telefono</th>
+                             <th>Beneficiencia y/o Empresa</th>
+                             <th>Mensaje</th>
+                             <th>Fecha</th>
+                             <th>Cambiar Estado</th>
+                        </tr>
+                    <?php
+    
+        $query="SELECT * FROM solicitud WHERE idusuario = '".$_SESSION['id']."' AND estado = 3";
+        $resultado = $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion));
+        while ($filas=$resultado->fetch_array())
+        {
+
+      ?>
+
+                        <tr>
+                             <td><?php echo $filas[2]?></td>
+                             <td><?php echo $filas[3]?></td>
+                             <td><?php echo $filas[4]?></td>
+                             <td><?php echo $filas[5]?></td>
+                             <td><?php echo $filas[6]?></a></td>
+                             <td><?php echo $filas[8]?></a></td>
+                             <td>      <a href="estadosolicitud1.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--solicitud pointer" >Aprobar </button> </a>
+                            <a href="estadosolicitud.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--editar pointer" >Pendiente </button> </a> </td>
+                        </tr>
+                        <?php
+        }
+      ?>
+      
                     </table>
 
                 </div>

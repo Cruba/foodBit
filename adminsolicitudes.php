@@ -54,6 +54,7 @@ if (isset($_SESSION['identificador'])){
                              <th>Telefono</th>
                              <th>Beneficiencia y/o Empresa</th>
                              <th>Mensaje</th>
+                             <th>Fecha</th>
                              <th>Editar</th>
 
                         </tr>
@@ -83,6 +84,8 @@ function ConsultarUsuario($id){
                              <td><?php echo $filas[4]?></td>
                              <td><?php echo $filas[5]?></td>
                              <td><?php echo $filas[6]?></td>
+                             <td><?php echo $filas[8]?></td>
+
                              <td>
                             <a href="editarsolicitudes.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--editar pointer" > <i class="fas fa-user-edit fa-lg"></i></button> </a>
                             <a href="eliminarsolicitud.php?usr=<?php echo $filas['identificador'] ?> " class="pointer"> <button type="submit" value="Contactar" class="boton3 boton--borrar pointer" > <i class="fas fa-user-slash fa-lg"></i></button> </a>

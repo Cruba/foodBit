@@ -9,8 +9,9 @@ if (isset($_POST['nombre'])  and isset($_POST['correo']) and isset($_POST['empre
     $tel=($_POST['telefono']);
     $empresa=($_POST['empresa']);
     $mensaje=($_POST['mensaje']);
-    $ingresar=mysqli_query($conexion,'INSERT INTO solicitud(nombre,idusuario,correo,telefono,empresa,mensaje) VALUES
-    ("'.$nombre.'","'.$idusuario.'","'.$correo.'","'.$tel.'","'.$empresa.'","'.$mensaje.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
+    $estado=(0);
+    $ingresar=mysqli_query($conexion,'INSERT INTO solicitud(nombre,idusuario,correo,telefono,empresa,mensaje, estado ) VALUES
+    ("'.$nombre.'","'.$idusuario.'","'.$correo.'","'.$tel.'","'.$empresa.'","'.$mensaje.'","'.$estado.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
     //redirección
     $from = "earc_r@hotmail.com";
     $to = "alainsc.bc@gmail.com";
